@@ -11,7 +11,6 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Administrator
         User::create([
             'name' => 'Administrator',
             'email' => 'admin@quiz.pl',
@@ -19,7 +18,6 @@ class UserSeeder extends Seeder
             'is_admin' => true,
         ]);
 
-        // 2. Student (Zwykły użytkownik)
         User::create([
             'name' => 'Student',
             'email' => 'student@quiz.pl',

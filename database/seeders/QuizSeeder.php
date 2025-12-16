@@ -10,7 +10,7 @@ class QuizSeeder extends Seeder
     public function run(): void
     {
         // ==========================================
-        // QUIZ 1: Ogólny (istniejący wcześniej)
+        // QUIZ 1
         // ==========================================
         $quiz1 = Quiz::create([
             'title' => 'Wielki Quiz o Skokach Narciarskich',
@@ -73,7 +73,7 @@ class QuizSeeder extends Seeder
         }
 
         // ==========================================
-        // QUIZ 2: Polskie Skocznie (NOWY)
+        // QUIZ 2
         // ==========================================
         $quiz2 = Quiz::create([
             'title' => 'Polskie Skocznie Narciarskie',
@@ -87,6 +87,7 @@ class QuizSeeder extends Seeder
                     ['content' => 'Wielka Krokiew', 'is_correct' => true],
                     ['content' => 'Średnia Krokiew', 'is_correct' => false],
                     ['content' => 'Mała Krokiew', 'is_correct' => false],
+                    ['content' => 'Antałówka', 'is_correct' => false],
                 ]
             ],
             [
@@ -95,6 +96,7 @@ class QuizSeeder extends Seeder
                     ['content' => 'Skocznia w Zakopanem', 'is_correct' => false],
                     ['content' => 'Skocznia w Wiśle-Malince', 'is_correct' => true],
                     ['content' => 'Skocznia w Szczyrku', 'is_correct' => false],
+                    ['content' => 'Skocznia w Lubawce', 'is_correct' => false],
                 ]
             ],
             [
@@ -103,6 +105,7 @@ class QuizSeeder extends Seeder
                     ['content' => 'W Wiśle', 'is_correct' => false],
                     ['content' => 'W Szczyrku', 'is_correct' => true],
                     ['content' => 'W Poroninie', 'is_correct' => false],
+                    ['content' => 'W Bielsku-Białej', 'is_correct' => false],
                 ]
             ],
             [
@@ -111,6 +114,7 @@ class QuizSeeder extends Seeder
                     ['content' => 'W Karpaczu', 'is_correct' => true],
                     ['content' => 'W Gdańsku', 'is_correct' => false],
                     ['content' => 'W Białymstoku', 'is_correct' => false],
+                    ['content' => 'W Warszawie', 'is_correct' => false],
                 ]
             ],
         ];

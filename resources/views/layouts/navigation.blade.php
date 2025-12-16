@@ -5,18 +5,23 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('quizzes.index') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-            </div>
+    @if(Auth::user()->is_admin)
+        <x-nav-link :href="route('admin.quizzes.index')" :active="request()->routeIs('admin.quizzes.*')">
+            {{ __('Zarządzaj Quizami') }}
+        </x-nav-link>
+    @else
+        <x-nav-link :href="route('quizzes.index')" :active="request()->routeIs('quizzes.*')">
+            {{ __('Dostępne Quizy') }}
+        </x-nav-link>
+    @endif
+</div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -67,7 +72,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('quizzes.index')" :active="request()->routeIs('quizzes.index')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
